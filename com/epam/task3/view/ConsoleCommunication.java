@@ -16,24 +16,5 @@ public class ConsoleCommunication {
         String request = ConsoleCommunication.reader.readLine();
         Controller controller = Controller.getInstance();
         controller.executeTask(request);
-//
-//            String str = " Book";
-//        System.out.println(str.contains(" Anton "));
-//        System.out.println(str.contains("Shoot"));
-//        System.out.println(str.contains(" "));
-//        System.out.println(str.contains("bla"));
-//        System.out.println(str.contains("gagagagagagaga"));
-//        for(News news : DataStore.getInstance().getNewsData()) {
-//            System.out.println(news);
-//        }
-
-//        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-//        NewsService newsService = serviceFactory.getNewsService();
-//
-//        for(News n : newsService.getNews("Anton")) {
-//            System.out.println(n);
-//        }
-
-
     }
 }

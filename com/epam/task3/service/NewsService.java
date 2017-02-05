@@ -14,6 +14,12 @@ public class NewsService implements ServiceNews {
     private DAOFactory daoFactory = DAOFactory.getInstance();
     private TXTFileWorkerDAO txtFileWorkerDAO = daoFactory.getTxtFileWorkerDAO();
 
+    /**
+     * Take news from controller and give it to DAO layer.
+     *
+     * @param request string with news.
+     * @throws ServiceException catch exception and throw it on service level.
+     */
     @Override
     public void addNews(String request) throws ServiceException {
         try {
@@ -24,6 +30,13 @@ public class NewsService implements ServiceNews {
 
     }
 
+    /**
+     * Return news from DAO layer to controller.
+     *
+     * @param request criterion for finding news.
+     * @return list of news.
+     * @throws ServiceException
+     */
     @Override
     public HashSet<News> getNews(String request) throws ServiceException {
         try {

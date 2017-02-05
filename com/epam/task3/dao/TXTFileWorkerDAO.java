@@ -10,10 +10,18 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.List;
 
+
 public class TXTFileWorkerDAO implements FileWorkable {
 //    private String pathToNewsDataFile = "C:\\Users\\Anton_Kuzmin\\IdeaProjects\\dataForTask3\\News.doc";
     private String pathToNewsDataFile = "/home/anton/DataSourceForTask3.txt";
 
+    /**
+     * Search news in text file, read lines and check it, if it fits the description add it at HashSet 'news'.
+     *
+     * @param request criterion for finding news.
+     * @return list of news.
+     * @throws DAOException catch exception and throw it on service level.
+     */
     @Override
     public HashSet<News> searchNewsInFIle(String request) throws DAOException {
         HashSet<News> news = new HashSet<>();
@@ -46,6 +54,13 @@ public class TXTFileWorkerDAO implements FileWorkable {
         }
     }
 
+    /**
+     * Add news in text file.
+     *
+     * @param request criterion for finding news.
+     * @throws DAOException catch exception and throw it on service level.
+     */
+
     @Override
     public void addItem(String request) throws DAOException {
         try {
@@ -58,6 +73,13 @@ public class TXTFileWorkerDAO implements FileWorkable {
         }
 
     }
+
+    /**
+     * Remove punctuation.
+     *
+     * @param str string in which it is necessary to remove the punctuation
+     * @return String
+     */
 
     private String removePunct(String str) {
         StringBuilder result = new StringBuilder(str.length());
